@@ -20,4 +20,4 @@ id: 1654445865882236100
 
 # 常用工具
 
-BinaryViewer | [下载页面](https://www.proxoft.com/BinaryViewer.aspx) 
+BinaryViewer | [下载页面](https://www.proxoft.com/BinaryViewer.aspx) | [BinaryViewerPortable.zip](https://www.proxoft.com/downloads/BinaryViewerPortable.zip) 
