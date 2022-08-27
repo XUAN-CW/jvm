@@ -1,4 +1,4 @@
-package learning.java.jvm;
+package learning.java.jvm.classinit;
 
 /**
  * @author 禤成伟
