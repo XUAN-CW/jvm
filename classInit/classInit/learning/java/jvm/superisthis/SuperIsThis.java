@@ -21,6 +21,5 @@ class Subclass extends Superclass {
 public class SuperIsThis {
     public static void main(String[] args) {
         new Subclass();
-        new Superclass();
     }
 }
