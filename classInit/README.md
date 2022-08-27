@@ -66,7 +66,7 @@ https://juejin.cn/post/6844903487432556551
 
 https://cloud.tencent.com/developer/article/1622192
 
-
+https://stackoverflow.com/questions/26357186/what-is-in-java-object-header
 
 
 
