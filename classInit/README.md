@@ -54,7 +54,35 @@ https://www.infoworld.com/article/2076949/how-the-java-virtual-machine-handles-m
 
 https://www.zhihu.com/question/51920553/answer/128610039
 
+---
+
+https://blog.csdn.net/topc2000/article/details/79454064
+https://www.cnblogs.com/dolphin0520/p/3681042.html
+https://blog.csdn.net/yb546822612/article/details/106210512
+
+https://www.cnblogs.com/javastack/p/15441274.html
+
+https://juejin.cn/post/6844903487432556551
+
+https://cloud.tencent.com/developer/article/1622192
 
 
 
 
+
+
+
+### 要点
+
+```
+使用-XX:hashCode=4来修改默认的hash方法实现。
+```
+
+- hashCode == 4
+  此类方案返回当前对象的内存地址
+
+```ini
+if (hashCode == 4) {
+     value = cast_from_oop<intptr_t>(obj) ;
+  }
+```
