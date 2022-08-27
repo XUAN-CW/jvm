@@ -12,6 +12,7 @@ class Superclass {
 class Subclass extends Superclass {
     public Subclass() {
         System.out.println(this);
+        System.out.println(super.equals(this));
 
     }
 }
