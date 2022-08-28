@@ -48,7 +48,14 @@ docker cp  openjdk-17.0.2:/usr/java/openjdk-17/lib/src.zip openjdk-17.0.2-src.zi
 docker stop openjdk-17.0.2
 ```
 
-
+```sh
+docker pull openjdk:8u342
+docker run --rm -itd --name openjdk-8u342 openjdk:8u342
+# 进入 openjdk-8u342 运行 echo $JAVA_HOME 可知 /usr/java/openjdk-8/ 为 JAVA_HOME
+# 从 JAVA_HOME 中复制 src.zip 到宿主机即可
+docker cp  openjdk-8u342:/usr/java/openjdk-8/src.zip openjdk-8u342-src.zip
+docker stop openjdk-8u342
+```
 
 
 
