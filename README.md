@@ -32,9 +32,19 @@ Oracle 可能会收费，所以我们研究 OpenJDK
 
 ## 源代码
 
-https://jdk.java.net/archive/
+你可以按照 https://jdk.java.net/archive/ 的提示获取源代码，也可以通过 JDK 获取。我个人推荐通过 JDK 获取源代码，下面介绍通过 JDK 获取源代码的方式。
 
+JDK 解压后，可以在解压的文件中找到一个名为 **src.zip** 的文件，这个文件就是 JDK 源代码。
 
+1. JDK解压获取源代码。 **src.zip** 文件位置不同版本不太一样，JDK8解压的根目录下就有 **src.zip** ，而 JDK17 则是在解压目录下的 **lib/src.zip** 。
+2. JAVA_HOME 获取源代码。如果你安装了JDK ，那你可以使用 `echo $JAVA_HOME` 查看 JAVA_HOME，到 JAVA_HOME 下获取 **src.zip** 文件。
+3. 使用 docker 获取。
+
+```sh
+docker run --rm -itd --name openjdk-17.0.2  openjdk:17.0.2
+docker cp  openjdk-17.0.2:/usr/java/openjdk-17/lib/src.zip openjdk-17.0.2-src.zip
+docker stop openjdk-17.0.2
+```
 
 
 
