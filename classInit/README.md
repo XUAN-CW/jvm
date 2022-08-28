@@ -70,7 +70,7 @@ https://stackoverflow.com/questions/26357186/what-is-in-java-object-header
 
 https://www.baeldung.com/java-memory-layout
 
-
+https://www.artima.com/insidejvm/ed2/jvm8.html
 
 ### 要点
 
