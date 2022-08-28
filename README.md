@@ -41,7 +41,9 @@ JDK 解压后，可以在解压的文件中找到一个名为 **src.zip** 的文
 3. 使用 docker 获取。
 
 ```sh
-docker run --rm -itd --name openjdk-17.0.2  openjdk:17.0.2
+docker run --rm -itd --name openjdk-17.0.2 openjdk:17.0.2
+# 进入 openjdk-17.0.2 运行 echo $JAVA_HOME 可知 /usr/java/openjdk-17/ 为 JAVA_HOME
+# 从 JAVA_HOME 中复制 src.zip 到宿主机即可
 docker cp  openjdk-17.0.2:/usr/java/openjdk-17/lib/src.zip openjdk-17.0.2-src.zip
 docker stop openjdk-17.0.2
 ```
