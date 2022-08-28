@@ -58,7 +58,7 @@ docker stop openjdk-8u312
 
 
 
-
+https://mail.openjdk.org/pipermail/jdk-updates-dev/2022-January/011709.html 
 
 
 
