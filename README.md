@@ -40,13 +40,3 @@ jclasslib | [IDEA中安装](assets\references\IDEA字节码学习查看神器jcl
 
 
 
-# 疑惑
-
-## 类的初始化问题
-
-
-
-
-
-
-

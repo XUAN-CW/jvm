@@ -68,7 +68,7 @@ https://cloud.tencent.com/developer/article/1622192
 
 https://stackoverflow.com/questions/26357186/what-is-in-java-object-header
 
-
+https://www.baeldung.com/java-memory-layout
 
 
 
