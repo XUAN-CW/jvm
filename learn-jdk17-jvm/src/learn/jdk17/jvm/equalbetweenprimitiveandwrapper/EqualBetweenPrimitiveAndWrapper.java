@@ -9,10 +9,14 @@ public class EqualBetweenPrimitiveAndWrapper {
     private boolean wrapperEqualsToWrapper(Integer i, Integer j){
         return i.equals(j);
     }
-    
+
     private boolean wrapperEqualsToPrimitive(Integer i,int j){
         return i.equals(j);
     }
+
+//    private boolean primitiveEqualsToPrimitive(int i,int j){
+//        return i.equals(j);
+//    }
 
     private boolean wrapperDoubleEqualToWrapper(Integer i,Integer j){
         return i == j;
