@@ -57,13 +57,7 @@ public class WrapperRequestGlobalFilter implements GlobalFilter {
                         return chain.filter(exchange.mutate().request(mutatedRequest)
                                 .build());
                     });
-        } else if ("GET".equals(method)) {
-            MultiValueMap<String, String> queryParams = request.getQueryParams();
-            System.out.printf("请求参数：" + queryParams);
-            System.out.println("****************************************************************************\n");
-            return chain.filter(exchange);
         }
-        System.out.println("****************************************************************************\n");
         return chain.filter(exchange);
     }
 }
