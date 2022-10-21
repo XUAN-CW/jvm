@@ -2,7 +2,6 @@ package com.example.requestcollector;
 
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.cloud.gateway.filter.GlobalFilter;
-import org.springframework.core.Ordered;
 import org.springframework.core.io.buffer.DataBuffer;
 import org.springframework.core.io.buffer.DataBufferUtils;
 import org.springframework.http.HttpHeaders;
@@ -14,7 +13,6 @@ import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-import java.io.UnsupportedEncodingException;
 import java.net.URI;
 import java.nio.charset.StandardCharsets;
 
@@ -26,13 +24,13 @@ public class WrapperRequestGlobalFilter implements GlobalFilter {
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
         ServerHttpRequest request = exchange.getRequest();
-        URI URIPath = request.getURI();
+        URI requestURI = request.getURI();
         String path = request.getPath().value();
         String method = request.getMethodValue();
         HttpHeaders header = request.getHeaders();
         System.out.println();
         System.out.println("***********************************请求信息**********************************");
-        System.out.printf("请求request信息：URI = %s, path = %s，method = %s，header = %s", URIPath.toString(), path, method, header.toString());
+        System.out.printf("请求request信息：URI = %s, path = %s，method = %s，header = %s", requestURI.toString(), path, method, header.toString());
         if ("POST".equals(method)) {
             return DataBufferUtils.join(exchange.getRequest().getBody())
                     .flatMap(dataBuffer -> {
