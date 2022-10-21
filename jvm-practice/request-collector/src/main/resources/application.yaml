@@ -1,0 +1,13 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        #  http://localhost:8080/qq
+        - id: to_qq
+          uri: http://qq.com
+          predicates:
+            - Path=/qq/**
+        - id: to_baidu
+          uri: http://baidu.com
+          predicates:
+            - Path=/baidu/**
