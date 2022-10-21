@@ -53,7 +53,6 @@ public class WrapperRequestGlobalFilter implements GlobalFilter {
                                 return cachedFlux;
                             }
                         };
-                        System.out.println("****************************************************************************\n");
                         return chain.filter(exchange.mutate().request(mutatedRequest)
                                 .build());
                     });
