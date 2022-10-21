@@ -2,13 +2,13 @@ spring:
   cloud:
     gateway:
       routes:
-        # http://localhost:8080/qq
+        # http://localhost:8080/?to=qq
         - id: to_qq
           uri: http://qq.com
           predicates:
-            - Path=/qq/**
-        # http://localhost:8080/baidu
+            - Query=to, qq
+        # http://localhost:8080/?to=baidu
         - id: to_baidu
           uri: http://baidu.com
           predicates:
-            - Path=/baidu/**
+            - Query=to, baidu
