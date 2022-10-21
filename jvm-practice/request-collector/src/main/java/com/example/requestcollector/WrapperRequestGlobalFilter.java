@@ -24,13 +24,13 @@ public class WrapperRequestGlobalFilter implements GlobalFilter {
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
         ServerHttpRequest request = exchange.getRequest();
-        URI requestURI = request.getURI();
+        URI requestUri = request.getURI();
         String path = request.getPath().value();
         String method = request.getMethodValue();
         HttpHeaders header = request.getHeaders();
         System.out.println();
         System.out.println("***********************************请求信息**********************************");
-        System.out.printf("请求request信息：URI = %s, path = %s，method = %s，header = %s", requestURI.toString(), path, method, header.toString());
+        System.out.printf("请求request信息：URI = %s, path = %s，method = %s，header = %s", requestUri.toString(), path, method, header.toString());
         if ("POST".equals(method)) {
             return DataBufferUtils.join(exchange.getRequest().getBody())
                     .flatMap(dataBuffer -> {
