@@ -38,7 +38,6 @@ public class WrapperRequestGlobalFilter implements GlobalFilter {
                         dataBuffer.read(bytes);
                         String bodyString = new String(bytes, StandardCharsets.UTF_8);
                         System.out.printf("请求参数：" + bodyString);
-                        exchange.getAttributes().put("POST_BODY", bodyString);
                         DataBufferUtils.release(dataBuffer);
                         Flux<DataBuffer> cachedFlux = Flux.defer(() -> {
                             DataBuffer buffer = exchange.getResponse().bufferFactory()
