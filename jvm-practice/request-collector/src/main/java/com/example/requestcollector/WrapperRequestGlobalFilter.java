@@ -13,8 +13,13 @@ import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import java.io.File;
+import java.io.IOException;
 import java.net.URI;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.UUID;
 
 /**
  * 在filter中获取前置预言里面的请求body
@@ -57,5 +62,21 @@ public class WrapperRequestGlobalFilter implements GlobalFilter {
                     });
         }
         return chain.filter(exchange);
+    }
+
+
+
+    public static void saveRequestInfo(String requestInfo){
+        final File requestInfoDir = new File("requestInfo");
+        requestInfoDir.mkdir();
+        try {
+            Files.writeString(Path.of(requestInfoDir.getAbsolutePath() + UUID.randomUUID()),requestInfo);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static void main(String[] args) {
+        saveRequestInfo("11");
     }
 }
