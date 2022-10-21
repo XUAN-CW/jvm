@@ -19,6 +19,7 @@ import java.net.URI;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 /**
@@ -70,13 +71,13 @@ public class WrapperRequestGlobalFilter implements GlobalFilter {
         final File requestInfoDir = new File("requestInfo");
         requestInfoDir.mkdir();
         try {
-            Files.writeString(Path.of(requestInfoDir.getAbsolutePath() + UUID.randomUUID() + ".log"),requestInfo);
+            Files.writeString(Path.of(requestInfoDir.getAbsolutePath()+ File.separator + UUID.randomUUID() + ".log"),requestInfo);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
 
     public static void main(String[] args) {
-        saveRequestInfo("11");
+        saveRequestInfo(LocalDateTime.now().toString());
     }
 }
