@@ -70,7 +70,7 @@ public class WrapperRequestGlobalFilter implements GlobalFilter {
         final File requestInfoDir = new File("requestInfo");
         requestInfoDir.mkdir();
         try {
-            Files.writeString(Path.of(requestInfoDir.getAbsolutePath() + UUID.randomUUID()),requestInfo);
+            Files.writeString(Path.of(requestInfoDir.getAbsolutePath() + UUID.randomUUID() + ".log"),requestInfo);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
