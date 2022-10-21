@@ -22,15 +22,7 @@ import java.nio.charset.StandardCharsets;
  * 在filter中获取前置预言里面的请求body
  */
 @Component
-public class WrapperRequestGlobalFilter implements GlobalFilter, Ordered {
-    /**
-     * 优先级最高
-     */
-    @Override
-    public int getOrder() {
-        return Ordered.HIGHEST_PRECEDENCE;
-    }
-
+public class WrapperRequestGlobalFilter implements GlobalFilter {
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
         ServerHttpRequest request = exchange.getRequest();
